@@ -1,0 +1,17 @@
+﻿<div class="container" style="margin-top: 30px;">
+	<form method="post" action="/Home/AddPostdb">
+		<div class="row">
+			<div class="col-lg-10" id="npost">
+				<input type="text" id="Name" name="Name" placeholder="Name" />
+				<input type="text" id="Des" name="Description" placeholder="Item description" />
+				<input type="number" id="phone" name="PhoneNumber" placeholder="PN 10 digit" />
+				<button class="btn btn-primary" disabled="disabled" id="submit">Submit</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+@section scripts{
+	<script src="~/Scripts/Submit.js"></script>
+}
+

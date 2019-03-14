@@ -1,0 +1,36 @@
+﻿@using Homework_3_11_2019.Models
+@Model List<Post>
+
+	<div class="container" style="margin-top: 40px;">
+		<table class="table-bordered table-hover table-striped table-responsive">
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Date Created</th>
+				<th>Phone Number</th>
+				<th>Tizku lemitzvos!</th>
+			</tr>
+			@foreach (Post p in Model)
+			{
+				<tr>
+					<td>@p.Name</td>
+					<td>@p.Description</td>
+					<td>@p.DateCreated</td>
+					<td>@p.PhoneNumber</td>
+					@if (p.IsUsers)
+					{
+						<td>
+							<form method="post" action="/Home/deletepost">
+								<input type="hidden" name="id" value="@p.Id" />
+								<button class="btn-danger">Delete</button>
+							</form>
+						</td>
+					}
+					else
+					{
+						<td>Hatzlachah:)</td>
+					}
+				</tr>
+			}
+		</table>
+	</div>
